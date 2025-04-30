@@ -4,43 +4,59 @@
 To write a C program to delete three elements from the filled circular queue.
 
 ## Algorithm
-
-1. Start the program. 
-2. Check if the queue is empty using the condition: `front == -1`.  
-3. If the queue is empty, display "Queue Underflow".
-4. If there is only one element (`front == rear`), set `front = -1` and `rear = -1`.  
-5. Otherwise, set `front = (front + 1) % size`. 
-6. Return the dequeued element from `queue[front]`.  
-7. End.
+ 1. Start 
+2. Define a queue with a fixed size SIZE and initialize front and rear pointers. 
+3. Define the deQueue() function to remove and return an element from the front of the queue. 
+4. Check if the queue is empty using isEmpty(); if empty, print an error message. 
+5. If the queue has one element, reset both front and rear to -1. 
+6. If the queue has more than one element, update front to the next index using modulo 
+operation ((front + 1) % SIZE). 
+7. Return the removed element from the front of the queue. 
+8. End
 
 ## Program:
 ```
+/*
 Program to delete three elements from the filled circular queue
-Developed by: Aaliya Fathima M
-RegisterNumber:  21222230001
-```
-```
-int deQueue() {
-  int element;
-  if (isEmpty()) {
-    printf("Queue is empty !! \n");
-    return (-1);
-  } else {
-    element = items[front];
-    if (front == rear) {
-      front = -1;
-      rear = -1;
-    } 
-    else {
-      front = (front + 1) % SIZE;
-    }
-    return (element);
-  }
-}
+Developed by: Aaliya Fathima
+RegisterNumber:  212223230001
+*/
+#include <stdio.h> 
+#define SIZE 5 
+int items[SIZE]; 
+int front = -1, rear = -1; 
+*/ 
+int deQueue() 
+{ 
+int element; 
+element=items[front]; 
+if(isEmpty()) 
+{ 
+printf("Queue is Empty!!"); 
+} 
+else 
+{ 
+if(front==rear) 
+{ 
+front=-1; 
+rear=-1; 
+} 
+  
+  
+else 
+{ 
+front=(front+1)%SIZE; 
+} 
+} 
+return element; 
+} 
 ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/1e23e84d-671c-41a0-89d4-3eee4cd16bb3)
+
+![image](https://github.com/user-attachments/assets/07242337-589a-4ff6-8f53-7c739f8b29fc)
+
+
 
 ## Result:
 Thus, the C program to delete three elements from the filled circular queue is implemented successfully.
